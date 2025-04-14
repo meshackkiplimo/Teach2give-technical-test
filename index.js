@@ -54,3 +54,50 @@ console.log(isPowerOfTwo(0))
 // Question 4: Capitalize Words
 // Write a program that accepts a string as input, capitalizes the first letter of each word in the
 // string, and then returns the result string.
+function capWords(str){
+    let result =''
+    let isFirstLetter = true
+    for(let char of str){
+        if(char=== ' '){
+            isFirstLetter= true
+            result += true 
+        }else if(isFirstLetter){
+            result += char.toUpperCase()
+            isFirstLetter= false
+
+        }else {
+            result += char.toLowerCase()
+        }
+
+    }
+    return result
+}
+console.log(capWords("hello "))
+
+// Question 5: Reverse Integer
+// Write a program that takes an integer as input and returns an integer with reversed digit
+// ordering.
+
+function reverseInteger(num){
+    let reversed = 0
+    while(num >0){
+        reversed = reversed * 10 + num % 10
+        num = Math.floor(num / 10)
+    }
+    return reversed
+}
+console.log(reverseInteger(90))
+
+// Question 6: Count Vowels
+// Write a program that counts the number of vowels in a sentence.
+function countVowels(str) {
+    let count = 0
+    const vowels = 'aeiouAEIOU'
+    for (let char of str) {
+        if (vowels.includes(char)) {
+            count++
+        }
+    }
+    return count
+}
+console.log(countVowels("hello world"))
